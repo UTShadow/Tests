@@ -13,10 +13,13 @@
     "emitDeclarationOnly": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
-    "paths": {
-      "@/*": ["./src/*"]
-      }
+    "types": ["@testing-library/jest-dom"],
   },
-  
-  "include": ["**/*.ts", "**/*.tsx"]
+  "exclude": [
+    "dist",
+    "node_modules",
+    "src/**/*.test.tsx",
+    "src/**/*.stories.tsx"
+  ],
+
 }
