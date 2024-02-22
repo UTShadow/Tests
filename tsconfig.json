@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    
     "esModuleInterop": true,
     "strict": true,
     "skipLibCheck": true,
@@ -19,7 +20,7 @@
     "dist",
     "node_modules",
     "src/**/*.test.tsx",
-    "src/**/*.stories.tsx"
+    
   ],
 
 }
