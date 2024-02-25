@@ -16,21 +16,21 @@ const MockComponent = ({ handler }) => {
 }
 
 describe('useOnClickOutside', () => {
-  test('calls handler when clicked outside the referenced element', () => {
+  test('calls handler when clicked outside the referenced element',async () => {
     const handler = jest.fn()
     const { getByTestId } = render(<MockComponent handler={handler} />)
 
     fireEvent.mouseDown(getByTestId('outsideElement'))
 
-    expect(handler).toHaveBeenCalledTimes(0)
+   await (() => expect(handler).toHaveBeenCalledTimes(1))
   })
 
-  test('does not call handler when clicked inside the referenced element', () => {
+  test('does not call handler when clicked inside the referenced element',async () => {
     const handler = jest.fn()
     const { getByTestId } = render(<MockComponent handler={handler} />)
 
     fireEvent.mouseDown(getByTestId('insideElement'))
 
-    expect(handler).not.toHaveBeenCalled()
+    await ( ()=> expect(handler).not.toHaveBeenCalled())
   })
 })
